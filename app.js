@@ -46,12 +46,51 @@ const coleccionNiveles = [
 
 
 //NIVEL x
-let sobrino = 'Alejandro Daniel Ramirez';
-let palabras = null;
+// let sobrino = 'Alejandro Daniel Ramirez';
+// let palabras = null;
 
-//contar palabras caracteres string javascript:
-// Quitar los espacios en blanco y pasar el string a minúsculas(si es necesario)
-// Recorrer la cadena de texto en vez de pasarlo a un array.
-// Finalmente guardar el resultado en un object, donde la letra es la key y su total.
+// //contar palabras caracteres string javascript:
+// // Quitar los espacios en blanco y pasar el string a minúsculas(si es necesario)
+// // Recorrer la cadena de texto en vez de pasarlo a un array.
+// // Finalmente guardar el resultado en un object, donde la letra es la key y su total.
 
-console.log(palabras);
+// console.log(palabras);
+
+
+// JUEGO
+
+// ESTRUCTURA HTML
+/* <main id="main" class="main">
+    <article id="mainContainer" class="main__container">
+        <section id="titulo" class="main__container__titulo"></section>
+        <section id="problemaContainer" class="main__container__problema-cont">
+            <div id="contenidoProblema" class="main__container__problema-cont__contenido"></div>
+        </section>
+        <section id="solucion" class="main__container__solucion"></section>
+    </article>
+</main> */
+
+// VARIABLES
+const main = document.getElementById('main');
+
+// CREACIÓN NODOS
+coleccionNiveles.forEach((nivel)=>{
+
+    // VARIABLES - TAG NAMEs
+    const mainContainer = document.createElement('article');
+    const titulo = document.createElement('article');
+    const probContainer = document.createElement('article');
+        const contenidoProb = document.createElement('div');
+    const solucion = document.createElement('article');
+
+    // APPENDCHILDs    
+    main.appendChild(mainContainer);
+    mainContainer.appendChild(titulo);
+    mainContainer.appendChild(probContainer);
+        probContainer.appendChild(contenidoProb);
+    mainContainer.appendChild(solucion);
+    
+    // AÑADIR CLASES
+    
+
+});

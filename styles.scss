@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+    background: url('./src/main-background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.2em;
+    padding-top: 3em; //titulo
+
+    &__container{
+        position: relative;
+        width: 90%;
+        height: 90%;
+        max-width: 60em;
+        max-height: 40em;
+        display: grid;
+        grid-template-rows: 1fr 0.2fr;
+        
+        &__titulo{
+            background-color: rgba(128, 128, 128, 0.9);
+            width: auto;
+            height: auto;
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+            font-weight: 600;
+            position: absolute;
+            bottom: 100%;
+            left: 25px;
+        }
+        &__problema-cont{
+            background-color: rgb(20, 167, 172);
+
+            background-image: url('./src/7.jpg');
+            background-size: cover;
+            box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+
+            &__contenido{
+                padding: 1.5em;
+                line-height: 1.9em;
+                display: grid;
+                grid-template-rows: 3;
+                
+                & > span{
+                    margin-bottom: 2em;
+                }
+                
+                &__span2{
+                    font-family: 'Fira Code', monospace;
+                }
+            }
+        }
+        &__solucion-flex{            
+            background-color: rgba(128, 128, 128, 0.9);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 0 0 20px 20px;
+
+            &__contenido{
+                &__textarea{
+                    width: 18em;
+                    height: 6em;
+                    border: 0px solid transparent;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    font-family: 'Fira Code', monospace;
+
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                &__btn{
+                    padding: 6px;
+                    background-color: white;
+                    border: 0;
+                    border-radius: 5px;
+                    font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+
+                    &:hover{
+                        // background-color: rgb(199, 199, 199);
+                        box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.6);
+                        cursor: pointer;
+                    }
+                    &:active{
+                        transform: scale(0.95);
+                        background-color: rgb(233, 233, 233);
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
