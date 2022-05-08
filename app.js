@@ -1,8 +1,8 @@
 //https://codepen.io/alvaro624la/pen/qBXXVmx
 const coleccionNiveles = [
-    {nivel: 1, titulo: 'Calentamiento nº1: Array', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array', problema: "let mascotas = ['perro'];", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro'},
-    {nivel: 2, titulo: 'Calentamiento nº2: Array', descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', problema: "let mascotas = ['gato', 'raton', 'perro'];", planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas'},
-    {nivel: 3, titulo: 'Calentamiento nº3: Array', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Gin', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; let cantidad = null;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable cantidad'},
+    {nivel: 1, titulo: 'Calentamiento nº1: Array', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', problema: "let mascotas = ['perro'];", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.'},
+    {nivel: 2, titulo: 'Calentamiento nº2: Array', descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', problema: "let mascotas = ['gato', 'raton', 'perro'];", planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas.'},
+    {nivel: 3, titulo: 'Calentamiento nº3: Array', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Gin', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; let cantidad = null;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable cantidad.'},
     {nivel: 4, titulo: 'Calentamiento nº4: Array', descripcion: '', problema: "", planteamiento: ''},
     {nivel: 5, titulo: '', descripcion: '', problema: "", planteamiento: ''},
     {nivel: 6, titulo: '', descripcion: '', problema: "", planteamiento: ''},
@@ -60,37 +60,75 @@ const coleccionNiveles = [
 // JUEGO
 
 // ESTRUCTURA HTML
-/* <main id="main" class="main">
-    <article id="mainContainer" class="main__container">
-        <section id="titulo" class="main__container__titulo"></section>
-        <section id="problemaContainer" class="main__container__problema-cont">
-            <div id="contenidoProblema" class="main__container__problema-cont__contenido"></div>
-        </section>
-        <section id="solucion" class="main__container__solucion"></section>
-    </article>
-</main> */
+/*
+    <div id="solucion" class="main__container__solucion-flex__contenido">
+        <textarea id="solText" class="main__container__solucion-flex__contenido__textarea" type="text" spellcheck="false" autocomplete="off" placeholder="Inroduce tu respuesta"></textarea>
+    </div>
+    <div id="solucion" class="main__container__solucion-flex__contenido">
+        <button id="solBtn" class="main__container__solucion-flex__contenido__btn">Comprobar</button>
+    </div>
+
+*/
 
 // VARIABLES
 const main = document.getElementById('main');
-
+let acc = 1;
 // CREACIÓN NODOS
 coleccionNiveles.forEach((nivel)=>{
-
-    // VARIABLES - TAG NAMEs
-    const mainContainer = document.createElement('article');
-    const titulo = document.createElement('article');
-    const probContainer = document.createElement('article');
-        const contenidoProb = document.createElement('div');
-    const solucion = document.createElement('article');
-
-    // APPENDCHILDs    
-    main.appendChild(mainContainer);
-    mainContainer.appendChild(titulo);
-    mainContainer.appendChild(probContainer);
-        probContainer.appendChild(contenidoProb);
-    mainContainer.appendChild(solucion);
+    if(nivel.nivel == acc){
+        // acc++;
+        console.log(nivel);
     
-    // AÑADIR CLASES
     
 
+        // VARIABLES - TAG NAMEs
+        const mainContainer = document.createElement('article');
+            const titulo = document.createElement('section');
+            const probContainer = document.createElement('section');
+                const contenidoProb = document.createElement('div');
+                    const probDesc = document.createElement('span');
+                    const probCode = document.createElement('span');const probPreg = document.createElement('span');
+            const solucionFlex = document.createElement('section');
+                const solucionContenido1 = document.createElement('div');
+                    const textarea = document.createElement('textarea');
+                const solucionContenido2 = document.createElement('div');
+                    const btn = document.createElement('button');
+
+        // APPENDCHILDs    
+        main.appendChild(mainContainer);
+        mainContainer.appendChild(titulo);
+        mainContainer.appendChild(probContainer);
+            probContainer.appendChild(contenidoProb);
+                contenidoProb.appendChild(probDesc);
+                contenidoProb.appendChild(probCode);
+                contenidoProb.appendChild(probPreg);
+        mainContainer.appendChild(solucionFlex);
+            solucionFlex.appendChild(solucionContenido1);
+                solucionContenido1.appendChild(textarea);
+            solucionFlex.appendChild(solucionContenido2);
+                solucionContenido2.appendChild(btn);
+    
+        // AÑADIR CLASES
+        mainContainer.classList.add('main__container');
+            titulo.classList.add('main__container__titulo');
+            probContainer.classList.add('main__container__problema-cont');
+                contenidoProb.classList.add('main__container__problema-cont__contenido');
+                    probDesc.classList.add('main__container__problema-cont__contenido__span1');
+                    probCode.classList.add('main__container__problema-cont__contenido__span2');
+                    probPreg.classList.add('main__container__problema-cont__contenido__span3');
+            solucionFlex.classList.add('main__container__solucion-flex');
+                solucionContenido1.classList.add('main__container__solucion-flex__contenido');
+                    textarea.classList.add('main__container__solucion-flex__contenido__textarea');
+                solucionContenido2.classList.add('main__container__solucion-flex__contenido');
+                    btn.classList.add('main__container__solucion-flex__contenido__btn');
+
+        // INNER HTML
+        titulo.innerHTML = nivel.titulo;
+        probDesc.innerHTML = nivel.descripcion;
+        probCode.innerHTML = nivel.problema;
+        probPreg.innerHTML = nivel.planteamiento;
+        solucionContenido1.innerHTML = `<textarea id="solText" class="main__container__solucion-flex__contenido__textarea" type="text" spellcheck="false" autocomplete="off" placeholder="Inroduce tu respuesta"></textarea>`;
+        solucionContenido2.innerHTML = `<button id="solBtn" class="main__container__solucion-flex__contenido__btn">Comprobar</button>`;
+    
+    }
 });

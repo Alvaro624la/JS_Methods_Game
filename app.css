@@ -37,7 +37,6 @@
   left: 25px;
 }
 .main__container__problema-cont {
-  background-color: rgb(20, 167, 172);
   background-image: url("./src/7.jpg");
   background-size: cover;
   box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
@@ -67,11 +66,12 @@
 }
 .main__container__solucion-flex__contenido__textarea {
   width: 18em;
-  height: 6em;
+  height: 4em;
   border: 0px solid transparent;
   padding: 15px 20px;
   border-radius: 5px;
   font-family: "Fira Code", monospace;
+  resize: none;
 }
 .main__container__solucion-flex__contenido__textarea:focus {
   outline: none;
