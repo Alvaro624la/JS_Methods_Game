@@ -70,12 +70,13 @@
             &__contenido{
                 &__textarea{
                     width: 18em;
-                    height: 4em;
+                    height: 4.5em;
                     border: 0px solid transparent;
                     padding: 15px 20px;
                     border-radius: 5px;
                     font-family: 'Fira Code', monospace;
                     resize: none;
+                    scroll-behavior: smooth;
 
                     &:focus{
                         outline: none;
