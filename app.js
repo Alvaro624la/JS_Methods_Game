@@ -126,9 +126,15 @@ comprobarBtn.addEventListener('click', ()=>{
         console.log('bien');
         acc++;
         alert(`¡Correcto!. El resultado del problema ${nivelProblema} y tu respuesta  da `);
+
+
+        eval('console.log(1)')
+
+
         nuevoNivel();
     } else {
         console.log('mal, prueba otra vez');
+        console.log(eval(nivelRespuesta));
     }
 });
 ///////////////////////////////////////////////////////////////
