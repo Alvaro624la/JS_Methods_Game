@@ -1,6 +1,6 @@
 //https://codepen.io/alvaro624la/pen/qBXXVmx
 const coleccionNiveles = [
-    {nivel: 1, titulo: 'Calentamiento nº1: Array', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', problema: "let mascotas = ['perro'];", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.', respuesta: "mascotas.unshift('gato');"},
+    {nivel: 1, titulo: 'Calentamiento nº1: Array', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', problema: "let mascotas = ['perro']", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.', respuesta: "mascotas.unshift('gato');"},
     {nivel: 2, titulo: 'Calentamiento nº2: Array', descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', problema: "let mascotas = ['gato', 'raton', 'perro'];", planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas.', respuesta: "mascotas.splice(1, 1);"},
     {nivel: 3, titulo: 'Calentamiento nº3: Array', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Gin', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; let cantidad = null;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable cantidad.', respuesta: "cantidad = perros.length;"},
     {nivel: 4, titulo: 'Calentamiento nº4: Array', descripcion: '', problema: "", planteamiento: ''},
@@ -125,18 +125,43 @@ comprobarBtn.addEventListener('click', ()=>{
     if(respuesta.value == nivelRespuesta){
         console.log('bien');
         acc++;
-        alert(`¡Correcto!. El resultado del problema ${nivelProblema} y tu respuesta  da `);
+        //CONSOLA AUTOMATICA
+        let nombreVar = nivelProblema.split(" ")[1];
+        console.log(nombreVar);
+        // console.log(Object.keys({nivelProblema})[0]);
+        let problema = nivelProblema.split('=');
+        console.log(problema);
+        let respuesta = nivelRespuesta.split('.');
+        console.log(respuesta);
+        let añadirPunto = `.${respuesta[1]}`;
+        console.log(añadirPunto);
+        let juntar = problema[1]+añadirPunto;
+        console.log(juntar);
+        
 
-
-        eval('console.log(1)')
-
-
+        // alert(`¡Correcto!. El resultado del problema ${nivelProblema} y tu respuesta ${respuesta.value} da `);
         nuevoNivel();
     } else {
-        console.log('mal, prueba otra vez');
-        console.log(eval(nivelRespuesta));
+        console.log('Incorrecto, prueba otra vez');
+        // mascotas.unshift('gato');
     }
 });
 ///////////////////////////////////////////////////////////////
 };
 nuevoNivel();
+
+//CONSOLA AUTOMATICA
+let nombreVar = nivelProblema.split(" ")[1];
+console.log(`nombreVar (split " ") --> ${nombreVar}`);
+// console.log(Object.keys({nivelProblema})[0]);
+let problema = nivelProblema.split('=');
+console.log(`problema (split =) --> ${problema}`);
+let respuesta = nivelRespuesta.split('.');
+console.log(`respuesta (split .) --> ${respuesta}`);
+let añadirPunto = `.${respuesta[1]}`;
+console.log(`añadirPunto . y respuesta[1] --> ${añadirPunto}`);
+let juntar = problema[1]+añadirPunto;
+console.log(`juntar todo --> ${juntar}`);
+console.log('falta operar esta string, pero evaluar solo sirve para darme un numero:');
+console.log(eval(new String(juntar)));
+console.log(eval(juntar));
