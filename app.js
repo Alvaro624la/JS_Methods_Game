@@ -112,7 +112,7 @@ let nuevoNivel = () => {
             probCode.innerHTML = nivel.problema;
             probPreg.innerHTML = nivel.planteamiento;
             solucionContenido1.innerHTML = `<textarea id="solText" class="main__container__solucion-flex__contenido__textarea" type="text" spellcheck="false" autocomplete="off" placeholder="Introduce tu respuesta">;</textarea>`;
-            solucionContenido2.innerHTML = `<button id="solBtn" class="main__container__solucion-flex__contenido__btn">Comprobar</button>`;
+            solucionContenido2.innerHTML = `<button id="editor" onclick="_runJavascript(_editor.getValue())" class="main__container__solucion-flex__contenido__btn">Comprobar</button>`;
         };
     });
 
@@ -125,7 +125,7 @@ let nuevoNivel = () => {
 
 
 
-    
+
 //CONSOLA
 var _editor, _statusbar, _console, _history = [""], _historyIndex = 0, _consoleEditor;
 
@@ -214,12 +214,6 @@ window.addEventListener("load", function() {
 
       }
     });
-
-   	window.addEventListener('mousemove', _mouseMove);
-   	window.addEventListener('mouseup', _mouseUp);
-   	window.addEventListener('resize', function() {_editor.resize();_consoleEditor.resize();});
-   	_editor.resize();
-		_consoleEditor.resize();
 });
 
 
@@ -304,40 +298,16 @@ function escapeHtml(unsafe) {
 
 
 
-/*
+
 ///////////////////////////////////////////////////////////////
 //COMPROBACIÓN RESULTADO
 //VARIABLES (global)
 let respuesta = document.getElementById('solText');
 let comprobarBtn = document.getElementById('solBtn');
 //FUNCIONES
-comprobarBtn.addEventListener('click', ()=>{
-    if(respuesta.value == nivelRespuesta){
-        console.log('bien');
-        acc++;
-        //CONSOLA AUTOMATICA
-        let nombreVar = nivelProblema.split(" ")[1];
-        console.log(nombreVar);
-        // console.log(Object.keys({nivelProblema})[0]);
-        let problema = nivelProblema.split('=');
-        console.log(problema);
-        let respuesta = nivelRespuesta.split('.');
-        console.log(respuesta);
-        let añadirPunto = `.${respuesta[1]}`;
-        console.log(añadirPunto);
-        let juntar = problema[1]+añadirPunto;
-        console.log(juntar);
-        
-
-        // alert(`¡Correcto!. El resultado del problema ${nivelProblema} y tu respuesta ${respuesta.value} da `);
-        nuevoNivel();
-    } else {
-        console.log('Incorrecto, prueba otra vez');
-        // mascotas.unshift('gato');
-    }
-});
+comprobarBtn.addEventListener('click', _runJavascript(_editor.getValue()));
 ///////////////////////////////////////////////////////////////
-*/
+
 
 };
 nuevoNivel();
