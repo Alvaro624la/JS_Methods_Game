@@ -60,9 +60,11 @@
   background-color: rgba(128, 128, 128, 0.9);
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   border-radius: 0 0 20px 20px;
+  padding: 10px;
 }
 .main__container__solucion-flex__contenido__textarea {
   width: 18em;
@@ -78,6 +80,7 @@
   outline: none;
 }
 .main__container__solucion-flex__contenido__btn {
+  margin: 5px;
   padding: 6px;
   background-color: white;
   border: 0;
@@ -91,6 +94,38 @@
 .main__container__solucion-flex__contenido__btn:active {
   transform: scale(0.95);
   background-color: rgb(233, 233, 233);
+}
+
+@media (max-width: 367px) {
+  .body {
+    background-color: #000;
+  }
+
+  .main {
+    font-size: 1em;
+  }
+  .main__container__titulo {
+    left: 0px;
+  }
+  .main__container__problema-cont {
+    border-radius: 0px 20px 0 0;
+  }
+}
+@media (max-height: 500px) {
+  .body {
+    background-color: #000;
+  }
+
+  .main {
+    font-size: 1em;
+    height: 100%;
+  }
+  .main__container__titulo {
+    left: 0px;
+  }
+  .main__container__problema-cont {
+    border-radius: 0px 20px 0 0;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
