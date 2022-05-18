@@ -63,9 +63,11 @@
             background-color: rgba(128, 128, 128, 0.9);
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
             border-radius: 0 0 20px 20px;
+            padding: 10px;
 
             &__contenido{
                 &__textarea{
@@ -83,6 +85,7 @@
                     }
                 }
                 &__btn{
+                    margin: 5px;
                     padding: 6px;
                     background-color: white;
                     border: 0;
@@ -101,6 +104,19 @@
             }
 
             
+        }
+    }
+}
+@media (max-width: 367px) {
+    .main{
+        font-size: 1em;
+        &__container{ 
+            &__titulo{
+                left: 0px;
+            }
+            &__problema-cont{
+                border-radius: 0px 20px 0 0;
+            }
         }
     }
 }
