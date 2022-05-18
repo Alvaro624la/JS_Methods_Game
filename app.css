@@ -97,8 +97,28 @@
 }
 
 @media (max-width: 367px) {
+  .body {
+    background-color: #000;
+  }
+
   .main {
     font-size: 1em;
+  }
+  .main__container__titulo {
+    left: 0px;
+  }
+  .main__container__problema-cont {
+    border-radius: 0px 20px 0 0;
+  }
+}
+@media (max-width: 400px) {
+  .body {
+    background-color: #000;
+  }
+
+  .main {
+    font-size: 1em;
+    height: 100%;
   }
   .main__container__titulo {
     left: 0px;
