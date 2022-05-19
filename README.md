@@ -24,6 +24,6 @@ and then
 npm run build & npm run build-sass
 ```
 ## Preview
-![](/preview.JPG)
+![](/preview.png)
 
 <!-- ### Notes -->
