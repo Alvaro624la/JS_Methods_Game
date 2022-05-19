@@ -1,18 +1,80 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.main {
+.body {
   font-family: "Montserrat", sans-serif, Helvetica, Arial;
+}
+.body__modal {
+  display: none;
+  transition: opacity 0.5s;
+  background-image: url("./src/7.jpg");
+  background-size: cover;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1em;
+  box-shadow: rgba(3, 52, 214, 0.3) 0px 0px 0px 4px;
+  max-width: 25em;
+  max-height: 48em;
+}
+.body__modal--active {
+  display: block;
+}
+.body__modal__content {
+  padding: 20px;
+  line-height: 1.6em;
+  width: auto;
+  height: auto;
+  font-size: 1.1em;
+}
+.body__modal__close-btn {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid red;
+  font-size: 2em;
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  transition: 0.2s;
+}
+.body__modal__close-btn:hover {
+  background-color: rgba(207, 29, 29, 0.6);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.body__modal__close-btn:active {
+  background-color: rgba(207, 29, 29, 0.9);
+}
+.body__modal__close-btn::after {
+  content: "❌";
+  font-size: 0.7em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.body__modal__close-btn--active {
+  display: block;
+}
+
+.main {
   background: url("./src/main-background.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   font-size: 1.2em;
   padding-top: 3em;
 }
@@ -24,6 +86,29 @@
   max-height: 40em;
   display: grid;
   grid-template-rows: 1fr 0.2fr;
+}
+.main__container__start-over-btn {
+  background-color: rgba(255, 0, 0, 0.692);
+  width: auto;
+  height: auto;
+  padding: 5px;
+  border-radius: 15px 15px 0 0;
+  font-weight: 600;
+  position: absolute;
+  bottom: 100%;
+  right: 20px;
+  border: 0 solid transparent;
+}
+.main__container__start-over-btn::after {
+  content: "Start Over";
+  color: white;
+}
+.main__container__start-over-btn:hover {
+  background-color: rgba(211, 34, 34, 0.692);
+  cursor: pointer;
+}
+.main__container__start-over-btn:active {
+  background-color: rgba(255, 0, 0, 0.692);
 }
 .main__container__titulo {
   background-color: rgba(128, 128, 128, 0.9);
@@ -100,7 +185,7 @@ code {
   font-size: 1.3em;
 }
 
-@media (max-width: 367px) {
+@media (max-width: 443px) {
   .body {
     background-color: #000;
   }
@@ -117,6 +202,17 @@ code {
 
   code {
     font-size: 1.1em;
+  }
+}
+@media (max-width: 373px) {
+  .main {
+    padding-top: 5.8em;
+  }
+  .main__container__start-over-btn {
+    width: 100vw;
+    border-radius: 0 0 15px 15px;
+    bottom: calc(100% + 5.3em);
+    right: -18px;
   }
 }
 @media (max-height: 500px) {
