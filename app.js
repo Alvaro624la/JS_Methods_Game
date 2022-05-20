@@ -98,7 +98,7 @@ const coleccionNiveles = [
 
 // VARIABLES (global)
 const main = document.getElementById('main');
-let acc = 8;
+let acc = 1;
 let nivelProblema = "";
 let nivelRespuesta = "";
 let nivelSolucion = "";
