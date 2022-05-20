@@ -5,22 +5,24 @@ const coleccionNiveles = [
     
     {nivel: 3, titulo: 'Calentamiento nº3: Array', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable <code>cantidad</code>.', respuesta: "cantidad = perros.length;", solucion: "let cantidad = 10;"},
     
-    {nivel: 4, titulo: 'Nivel 1: Junior Front-End', descripcion: 'Invertir cadena', problema: "let cadena = 'pato'; <br>let invertida = <em>undefined</em>;", planteamiento: 'Invierte los caracteres de la variable cadena, y asigalos a la variable <code>invertida</code>.', respuesta: "invertida = cadena.split('').reverse().join('');", solucion: "let invertida = 'otap'"},
+    {nivel: 4, titulo: 'Nivel 1: Junior Front-End', descripcion: 'Invertir cadena', problema: "let cadena = 'pato donald'; <br>let invertida = <em>undefined</em>;", planteamiento: 'Invierte los caracteres de la variable cadena, y asigalos a la variable <code>invertida</code>.', respuesta: "invertida = cadena.split('').reverse().join('');", solucion: "let invertida = 'dlanod otap'"},
+
+    {nivel: 5, titulo: 'Nivel 2: Junior Front-End', descripcion: 'He recibido ésta colección de datos:', problema: "let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22]; <br>let ordenar = <em>undefined</em>;", planteamiento: 'Ordena de forma ascendente éstos datos y asigna el resultado a la variable <code>ordenar</code>.', respuesta: "ordenar = datos.sort((a, b)=> a - b);", solucion: "let ordenar = [1, 2, 4, 4, 5, 5, 10, 12, 21, 22, 32, 369, 696, 1000];"},
+
+    {nivel: 6, titulo: 'Nivel 3: Junior Front-End', descripcion: 'Quiero saber el número total, de todas las "s" que hay en éste trabalenguas:', problema: "let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto'; <br>let repet = <em>null</em>;", planteamiento: '¿Cuál es el número de veces que se repite la letra "s" en el trabalenguas?. Asignalo el resultado a la variable <code>repet</code>.', respuesta: "repet = trabalenguas.match(/s/gi).length;", solucion: "let repet = '11'"},
     
-    {nivel: 5, titulo: 'Nivel 2: Junior Front-End', descripcion: 'Quiero saber el número total, de todas las "s" que hay en éste trabalenguas:', problema: "let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto'; <br>let repet = <em>null</em>;", planteamiento: '¿Cuál es el número de veces que se repite la letra "s" en el trabalenguas?. Asignalo el resultado a la variable <code>repet</code>.', respuesta: "repet = trabalenguas.match(/s/gi).length;", solucion: "let repet = '11'"},
-    ///////////////////////////FALTA COMPLETAR
-    {nivel: 6, titulo: 'Nivel 3: Junior Front-End', descripcion: '', problema: "let frase = ' Bueno,  parece   algo   ,  facil'; <br>let palabras = <em>undefined</em>;", planteamiento: '¿Cuál es la cantidad de palabras contiene esta frase?', respuesta: "", solucion: ""},
+    {nivel: 7, titulo: 'Nivel 5: Junior Front-End', descripcion: '', problema: "let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.'; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál es la cantidad de números que contiene esta cadena?', respuesta: "cantidad = cadena.match(/[0-9]/g).length;", solucion: "let cantidad = 27;"},
     
-    {nivel: 7, titulo: 'Nivel 4: Junior Front-End', descripcion: '', problema: "let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.'; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál es la cantidad de números que contiene esta cadena?', respuesta: "", solucion: ""},
+    // {nivel: 8, titulo: 'Nivel 4: Junior Front-End', descripcion: '', problema: "let frase = ' Bueno,  parece   algo   ,  facil'; <br>let palabras = <em>undefined</em>;", planteamiento: '¿Cuál es la cantidad de palabras contiene esta frase?', respuesta: "", solucion: ""},
+
+    {nivel: 9, titulo: 'Nivel 6: Junior Front-End', descripcion: '', problema: "", planteamiento: '', respuesta: "", solucion: ""},
     
-    {nivel: 8, titulo: 'Nivel 5: Junior Front-End', descripcion: '', problema: "", planteamiento: '', respuesta: "", solucion: ""},
+    {nivel: 10, titulo: 'Nivel 7: Junior Front-End', descripcion: 'Distancia de Hamming', problema: "", planteamiento: '', respuesta: "", solucion: ""},
     
-    {nivel: 9, titulo: 'Nivel 6: Junior Front-End', descripcion: 'Distancia de Hamming', problema: "", planteamiento: '', respuesta: "", solucion: ""},
-    
-    {nivel: 10, titulo: '', descripcion: '', problema: "", planteamiento: '', respuesta: "", solucion: ""},
+    {nivel: 11, titulo: '', descripcion: '', problema: "", planteamiento: '', respuesta: "", solucion: ""},
     
     {nivel: 666, titulo: '', descripcion: 'Hoy tengo comida familiar. Quiero poner el nombre de los invitados en las sillas, pero tengo poco espacio para escribir a mi sobrino', problema: "let sobrino = 'Alejandro Daniel Ramirez'", planteamiento: '¿Cuántas palabras/carácteres contiene exactamente el nombre de "Alejandro"? Asigna el valor resultante a la variable "palabras"'},
-    ///////////////////////////FALTA COMPLETAR
+
 ];
 
 //COMPROBACIONES (cambiar de documento al terminar comprobaciones (visible para el cliente))
@@ -37,31 +39,38 @@ const coleccionNiveles = [
 // console.log(mascotas);
 // let car;
 // console.log(car);
-// //comprobar
 
 //NIVEL 3
 // let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Gin', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen'];
 // let cantidad = null;
 // cantidad = perros.length;
 // console.log(cantidad);
-// //comprobar
 
 //NIVEL 4
-// let cadena = 'pato';
+// let cadena = 'pato donald';
 // let invertida = undefined;
-// invertida = cadena.split("").reverse().join("");
+// invertida = cadena.split('').reverse().join('');
 // console.log(invertida);
-// //comprobar
 
 //NIVEL 5
+// let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22];
+// let ordenar = undefined;
+// ordenar = datos.sort((a, b)=> a - b);
+// console.log(ordenar);
+
+//NIVEL 6
 // let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto';
 // let repet = null;
 // repet = trabalenguas.match(/s/gi).length;
 // console.log(repet);
-// //comprobar
 
-//NIVEL 6
+//NIVEL 7
+// let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.';
+// let cantidad;
+// cantidad = cadena.match(/[0-9]/g).length;
+// console.log(cantidad);
 
+//NIVEL 8
 
 
 
