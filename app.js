@@ -98,7 +98,7 @@ const coleccionNiveles = [
 
 // VARIABLES (global)
 const main = document.getElementById('main');
-let acc = 9;
+let acc = 1;
 let nivelProblema = "";
 let nivelRespuesta = "";
 let nivelSolucion = "";
@@ -181,7 +181,7 @@ let nuevoNivel = () => {
             //GAME FINISHED/PASSED
             if(acc === 9){
                 solucionContenido1.innerHTML = ``;
-            solucionContenido2.innerHTML = ``;
+                solucionContenido2.innerHTML = ``;
             };
         };
     });
@@ -244,7 +244,6 @@ let nuevoNivel = () => {
 
     clearBtn.addEventListener('click', ()=>{
         localStorage.removeItem('contador');
-        // localStorage.clear();
         acc = 1;
         nuevoNivel();
     });
