@@ -230,11 +230,13 @@ code{
 
         &__container{
             &__start-over-btn{
-display: none;
-                width: 100vw;
+                position: fixed;
+                width: 100%;
                 border-radius: 0 0 15px 15px;
-                bottom: calc(100% + 5.3em);
-                right: -18px;
+                bottom: 97%;
+                top: 0;
+                right: 0;
+                padding: 0;
             }
         }
     }
