@@ -1,21 +1,21 @@
 const coleccionNiveles = [
-    {nivel: 1, titulo: 'Calentamiento nº1: Array', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', problema: "let mascotas = ['perro'];", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.', respuesta: "mascotas.unshift('gato');", solucion: "let mascotas = ['gato', 'perro'];", comprobacion: "mascotas[0].includes('gato')"},
+    {nivel: 1, titulo: 'Calentamiento nº1: Array 🐱', descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', problema: "let mascotas = ['perro'];", planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.', respuesta: "mascotas.unshift('gato');", solucion: "let mascotas = ['gato', 'perro'];", comprobacion: "mascotas[0].includes('gato')"},
     
-    {nivel: 2, titulo: 'Calentamiento nº2: Array', descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', problema: "let mascotas = ['gato', 'raton', 'perro'];", planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas.', respuesta: "mascotas.splice(1, 1);", solucion: "let mascotas = ['gato', 'perro'];"},
+    {nivel: 2, titulo: 'Calentamiento nº2: Array 🐭', descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', problema: "let mascotas = ['gato', 'raton', 'perro'];", planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas.', respuesta: "mascotas.splice(1, 1);", solucion: "let mascotas = ['gato', 'perro'];"},
     
-    {nivel: 3, titulo: 'Calentamiento nº3: Array', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable <code>cantidad</code>.', respuesta: "cantidad = perros.length;", solucion: "let cantidad = 10;"},
+    {nivel: 3, titulo: 'Calentamiento nº3: Array 🐶', descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable <code>cantidad</code>.', respuesta: "cantidad = perros.length;", solucion: "let cantidad = 10;"},
     
-    {nivel: 4, titulo: 'Nivel 1: Junior Front-End', descripcion: 'Invertir cadena', problema: "let cadena = 'pato donald'; <br>let invertida = <em>undefined</em>;", planteamiento: 'Invierte los caracteres de la variable cadena, y asigalos a la variable <code>invertida</code>.', respuesta: "invertida = cadena.split('').reverse().join('');", solucion: "let invertida = 'dlanod otap'"},
+    {nivel: 4, titulo: 'Nivel 1: Junior Front-End 🤞', descripcion: 'Invertir cadena', problema: "let cadena = 'pato donald'; <br>let invertida = <em>undefined</em>;", planteamiento: 'Invierte los caracteres de la variable cadena, y asigalos a la variable <code>invertida</code>.', respuesta: "invertida = cadena.split('').reverse().join('');", solucion: "let invertida = 'dlanod otap'"},
 
-    {nivel: 5, titulo: 'Nivel 2: Junior Front-End', descripcion: 'He recibido ésta colección de datos:', problema: "let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22]; <br>let ordenar = <em>undefined</em>;", planteamiento: 'Ordena de forma ascendente éstos datos y asigna el resultado a la variable <code>ordenar</code>.', respuesta: "ordenar = datos.sort((a, b)=> a - b);", solucion: "let ordenar = [1, 2, 4, 4, 5, 5, 10, 12, 21, 22, 32, 369, 696, 1000];"},
+    {nivel: 5, titulo: 'Nivel 2: Junior Front-End 🔢', descripcion: 'He recibido ésta colección de datos:', problema: "let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22]; <br>let ordenar = <em>undefined</em>;", planteamiento: 'Ordena de forma ascendente éstos datos y asigna el resultado a la variable <code>ordenar</code>.', respuesta: "ordenar = datos.sort((a, b)=> a - b);", solucion: "let ordenar = [1, 2, 4, 4, 5, 5, 10, 12, 21, 22, 32, 369, 696, 1000];"},
 
-    {nivel: 6, titulo: 'Nivel 3: Junior Front-End', descripcion: 'Quiero saber el número total, de todas las "s" que hay en éste trabalenguas:', problema: "let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto'; <br>let repet = <em>null</em>;", planteamiento: '¿Cuál es el número de veces que se repite la letra "s" en el trabalenguas?. Asignalo el resultado a la variable <code>repet</code>.', respuesta: "repet = trabalenguas.match(/s/gi).length;", solucion: "let repet = '11'"},
+    {nivel: 6, titulo: 'Nivel 3: Junior Front-End 🕵️‍♀️', descripcion: 'Quiero saber el número total, de todas las "s" que hay en éste trabalenguas:', problema: "let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto'; <br>let repet = <em>null</em>;", planteamiento: '¿Cuál es el número de veces que se repite la letra "s" en el trabalenguas?. Asignalo el resultado a la variable <code>repet</code>.', respuesta: "repet = trabalenguas.match(/s/gi).length;", solucion: "let repet = '11'"},
     
-    {nivel: 7, titulo: 'Nivel 5: Junior Front-End', descripcion: '', problema: "let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.'; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál es la cantidad de números que contiene esta cadena?', respuesta: "cantidad = cadena.match(/[0-9]/g).length;", solucion: "let cantidad = 27;"},
+    {nivel: 7, titulo: 'Nivel 5: Junior Front-End 🧮', descripcion: '', problema: "let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.'; <br>let cantidad = <em>null</em>;", planteamiento: '¿Cuál es la cantidad de números que contiene esta cadena?. Asigna el valor a la variable <code>cantidad</code>.', respuesta: "cantidad = cadena.match(/[0-9]/g).length;", solucion: "let cantidad = 27;"},
     
-    // {nivel: 8, titulo: 'Nivel 4: Junior Front-End', descripcion: '', problema: "let frase = ' Bueno,  parece   algo   ,  facil'; <br>let palabras = <em>undefined</em>;", planteamiento: '¿Cuál es la cantidad de palabras contiene esta frase?', respuesta: "", solucion: ""},
+    {nivel: 8, titulo: 'Nivel 4: Junior Front-End #️⃣', descripcion: 'Teniendo esta frase:', problema: "let frase = ' Bueno,  parece   algo   ,  facil'; <br>let palabras = <em>undefined</em>;", planteamiento: '¿Cuál es la cantidad de palabras contiene esta frase?. Asigna el valor a la variable <code>palabras</code>.', respuesta: "", solucion: ""},
 
-    {nivel: 9, titulo: 'Nivel 6: Junior Front-End', descripcion: '', problema: "", planteamiento: '', respuesta: "", solucion: ""},
+    {nivel: 9, titulo: 'Finished!🎉', descripcion: "Congratulations, you've finished the JS Methods Game.", problema: "😁let JsMethodsGame = true;😁", planteamiento: 'See more of me here: <code>https://github.com/Alvaro624la</code>', respuesta: "", solucion: ""},
     
     {nivel: 10, titulo: 'Nivel 7: Junior Front-End', descripcion: 'Distancia de Hamming', problema: "", planteamiento: '', respuesta: "", solucion: ""},
     
@@ -98,7 +98,7 @@ const coleccionNiveles = [
 
 // VARIABLES (global)
 const main = document.getElementById('main');
-let acc = 1;
+let acc = 9;
 let nivelProblema = "";
 let nivelRespuesta = "";
 let nivelSolucion = "";
@@ -177,13 +177,22 @@ let nuevoNivel = () => {
                 modalBtn = document.createElement('div');
                 modal.appendChild(modalBtn);
                 modalBtn.classList.add('body__modal__close-btn');
+
+            //GAME FINISHED/PASSED
+            if(acc === 9){
+                solucionContenido1.innerHTML = ``;
+            solucionContenido2.innerHTML = ``;
+            };
         };
     });
 
+
     //COMPROBACIÓN RESULTADO
     //VARIABLES (global)
-    let respuesta = document.getElementById('solText');
-    let comprobarBtn = document.getElementById('solBtn');
+    try{
+        let respuesta = document.getElementById('solText');
+        let comprobarBtn = document.getElementById('solBtn'); 
+   
     //FUNCIONES
     comprobarBtn.addEventListener('click', ()=>{
         if(respuesta.value == nivelRespuesta){
@@ -239,6 +248,10 @@ let nuevoNivel = () => {
         acc = 1;
         nuevoNivel();
     });
+}catch(error){
+    //aprovecho el error de no detectar las variables let respuesta y let comprobarBtn para dar un mensaje y eliminar el error con catch.
+    console.log('You passed the game!');
+}
 };
 nuevoNivel();
 
@@ -248,4 +261,4 @@ window.onload = ()=>{
         acc = JSON.parse(localStorage.getItem('contador'));
         nuevoNivel();
     };
-}
+};
