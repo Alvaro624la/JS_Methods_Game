@@ -98,7 +98,7 @@ const coleccionNiveles = [
 
 // VARIABLES (global)
 const main = document.getElementById('main');
-let acc = 1;
+let acc = 8;
 let nivelProblema = "";
 let nivelRespuesta = "";
 let nivelSolucion = "";
@@ -182,6 +182,13 @@ let nuevoNivel = () => {
             if(acc === 9){
                 solucionContenido1.innerHTML = ``;
                 solucionContenido2.innerHTML = ``;
+                //clear local storage btn
+                let clearBtn = document.getElementById('clearLocalStorageBtn');
+                clearBtn.addEventListener('click', ()=>{
+                    localStorage.removeItem('contador');
+                    acc = 1;
+                    nuevoNivel();
+                });
             };
         };
     });
