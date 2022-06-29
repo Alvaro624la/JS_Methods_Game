@@ -124,7 +124,7 @@
 .main__container__problema-cont {
   background-image: url("./src/7.jpg");
   background-size: cover;
-  box-shadow: 10px 10px 20px 5px black;
+  box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
   border-radius: 20px 20px 0 0;
   display: flex;
   align-items: center;
@@ -178,7 +178,7 @@
 }
 .main__container__solucion-flex__contenido__btn:active {
   transform: scale(0.95);
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
 }
 
 code {
@@ -189,7 +189,6 @@ code {
   .body {
     background-color: #000;
   }
-
   .main {
     font-size: 1em;
   }
@@ -199,7 +198,6 @@ code {
   .main__container__problema-cont {
     border-radius: 0px 20px 0 0;
   }
-
   code {
     font-size: 1.1em;
   }
@@ -222,7 +220,6 @@ code {
   .body {
     background-color: #000;
   }
-
   .main {
     font-size: 1em;
     height: 100%;
