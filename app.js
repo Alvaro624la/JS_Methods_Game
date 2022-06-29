@@ -386,6 +386,7 @@ let nivelRespuesta;
 let nivelSolucion = "";
 //MODAL
 const body = document.getElementById('body');
+let bgModalBehind;
 let modal;
 let content;
 let modalBtn;
@@ -446,6 +447,10 @@ let nuevoNivel = () => {
             solucionContenido1.innerHTML = `<textarea id="solText" class="main__container__solucion-flex__contenido__textarea" type="text" spellcheck="false" autocomplete="off" placeholder="Introduce tu respuesta"></textarea>`;
             solucionContenido2.innerHTML = `<button id="solBtn" class="main__container__solucion-flex__contenido__btn">Comprobar</button>`;
 
+            //BG-MODAL
+            bgModalBehind = document.createElement('div');
+            body.appendChild(bgModalBehind);
+            
             //MODAL
             modal = document.createElement('div');
             body.appendChild(modal);
@@ -500,12 +505,29 @@ let nuevoNivel = () => {
             content.innerHTML = `¡Correcto! El resultado es ➔ ${nivelSolucion}`;
             modalBtn.classList.add('body__modal__close-btn--active');
             main.style.filter = 'blur(2px)';
-            modalBtn.addEventListener('click', ()=>{
+            bgModalBehind.classList.add('bg-main-modal-behind');
+            comprobarBtn.focus();
+            //cerrar el modal
+            let closeModalBien = ()=>{
                 modal.classList.remove('body__modal--active');
                 modalBtn.classList.remove('body__modal__close-btn--active');
                 main.style.filter = '';
+                bgModalBehind.classList.remove('bg-main-modal-behind');
                 //NUEVO NIVEL
                 nuevoNivel();
+            };
+            //cerrar modal con CLICK
+            modalBtn.addEventListener('click', ()=>{
+                closeModalBien();
+                respuesta.focus();
+            });
+            //cerrar modal con ESC key
+            document.addEventListener('keyup', (e)=>{
+                if(e.code == 'Escape'){
+                    e.preventDefault();
+                    closeModalBien();
+                    respuesta.focus();
+                };
             });
             //TEXTAREA
             respuesta.style.backgroundColor = 'rgba(0, 255, 0, .6)';
@@ -524,11 +546,28 @@ let nuevoNivel = () => {
             content.innerHTML = `Incorrecto (recuerda utilizar ES6 y/o escribir limpio y legible con espacios correspondientes)`;
             modalBtn.classList.add('body__modal__close-btn--active');
             main.style.filter = 'blur(2px)';
-            modalBtn.addEventListener('click', ()=>{
+            bgModalBehind.classList.add('bg-main-modal-behind');
+            comprobarBtn.focus();
+            //cerrar el modal
+            let closeModalMal = ()=>{
                 modal.classList.remove('body__modal--active');
                 modal.style.boxShadow = 'rgba(3, 52, 214, 0.3) 0px 0px 0px 4px';
                 modalBtn.classList.remove('body__modal__close-btn--active');
                 main.style.filter = '';
+                bgModalBehind.classList.remove('bg-main-modal-behind');
+            };
+            //cerrar modal con CLICK
+            modalBtn.addEventListener('click', ()=>{
+                closeModalMal();
+                respuesta.focus();
+            });
+            //cerrar modal con ESC key
+            document.addEventListener('keyup', (e)=>{
+                if(e.code == 'Escape'){
+                    e.preventDefault();
+                    closeModalMal();
+                    respuesta.focus();
+                };
             });
             //TEXTAREA
             respuesta.style.backgroundColor = 'rgba(255, 0, 0, .6)';
@@ -539,7 +578,7 @@ let nuevoNivel = () => {
         }
     };
     //Comprobar al presionar y soltar tecla ENTER
-    respuesta.addEventListener('keypress', function(e) {
+    respuesta.addEventListener('keypress', (e)=>{
         if (e.code == 'Enter') {
         e.preventDefault();
         check();
@@ -574,7 +613,6 @@ window.onload = ()=>{
 };
 
 //FALTA:
-//Añadir esc al boton del modal para cerrarlo
 //Opcion de mostrar niveles en orden aleatorio
 //Guardar en BBDD la cantidad de usuarios entrados en la pag.
 //Guardar en BBDD la cantidad/% de errores y aciertos, y en qué niveles.

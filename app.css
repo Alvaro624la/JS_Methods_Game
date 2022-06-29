@@ -23,6 +23,7 @@
   box-shadow: rgba(3, 52, 214, 0.3) 0px 0px 0px 4px;
   max-width: 25em;
   max-height: 48em;
+  z-index: 2;
 }
 .body__modal--active {
   display: block;
@@ -45,6 +46,7 @@
   top: -60px;
   right: -60px;
   transition: 0.2s;
+  z-index: 2;
 }
 .body__modal__close-btn:hover {
   background-color: rgba(207, 29, 29, 0.6);
@@ -64,6 +66,18 @@
 }
 .body__modal__close-btn--active {
   display: block;
+}
+
+.bg-main-modal-behind {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  opacity: 0.2;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .main {
