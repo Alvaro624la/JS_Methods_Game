@@ -80,6 +80,16 @@
   left: 0;
 }
 
+.focus-here {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+}
+
 .main {
   background: url("./src/main-background.jpg");
   background-size: cover;
