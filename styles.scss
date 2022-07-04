@@ -22,6 +22,7 @@
             box-shadow: rgba(3, 52, 214, 0.3) 0px 0px 0px 4px;
             max-width: 25em;
             max-height: 48em;
+            z-index: 2;
             
             &--active{
                 display: block;
@@ -49,6 +50,7 @@
                 top: -60px;
                 right: -60px;
                 transition: .2s;
+                z-index: 2;
     
                 &:hover{
                     background-color: rgba(207, 29, 29, 0.6);
@@ -68,9 +70,31 @@
                 }
                 &--active{
                     display: block;
-                }
+                }                
             }
         }
+}
+//bg para inactividad funcionalidades main cuando modal
+.bg-main-modal-behind{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    opacity: 0.2;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+//focus on ANCHOR (no textarea)
+.focus-here{
+    position: absolute;  
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
 }
 
 .main{

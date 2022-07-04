@@ -1,302 +1,36 @@
-const coleccionNiveles = [
-    {
-        nivel: 1, 
-        titulo: 'Calentamiento nº1: Array 🐱', 
-        descripcion: 'Vamos a empezar calentando con los conceptos más básicos. Empecemos por añadir valores a éste array:', 
-        problema: "let mascotas = ['perro'];", 
-        planteamiento: 'Añade, al principio del array, el nuevo "gato" que voy a adoptar para hacer compañia a mi perro.', 
-        respuesta: {
-            a: "mascotas.unshift('gato');",
-            b: "mascotas.unshift( 'gato' );",
-            c: 'mascotas.unshift("gato");',
-            d: 'mascotas.unshift( "gato" );',
-            e: "mascotas.unshift('gato')",
-            f: "mascotas.unshift( 'gato' )",
-            g: 'mascotas.unshift("gato")',
-            h: 'mascotas.unshift( "gato" )'
-        },
-        solucion: "let mascotas = ['gato', 'perro'];", 
-        comprobacion: "mascotas[0].includes('gato')"
-    },
-    {
-        nivel: 2, 
-        titulo: 'Calentamiento nº2: Array 🐭', 
-        descripcion: 'Continuamos calentando. Ahora me ha entrado un ratón en casa... ¡está entre mis mascotas!', 
-        problema: "let mascotas = ['gato', 'raton', 'perro'];", 
-        planteamiento: 'Modifica el array eliminando el "raton" de entre mis queridas mascotas.', 
-        respuesta: {
-            a: "mascotas.splice(1, 1);",
-            b: "mascotas.splice(1,1);",
-            c: "mascotas.splice( 1, 1 );",
-            d: "mascotas.splice(1, 1)",
-            e: "mascotas.splice(1,1)",
-            f: 'mascotas.splice( 1, 1 )'
-        },
-        solucion: "let mascotas = ['gato', 'perro'];"
-    },
-    {
-        nivel: 3, 
-        titulo: 'Calentamiento nº3: Array 🐶', 
-        descripcion: 'Me encantan los animales, por ello, he decidido presentarme voluntaria y pasear a todos éstos perros. Ayudame a contarlos rápidamente para poder apuntarlo en el registro de la perrera.', 
-        problema: "let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen']; <br>let cantidad = <em>null</em>;", 
-        planteamiento: '¿Cuál és el número exacto de perros que tengo que pasear hoy? Asigna el valor resultante a la variable <code>cantidad</code>.', 
-        respuesta: {
-            a: "cantidad = perros.length;",
-            b: "cantidad=perros.length;",
-            c: "cantidad= perros.length;",
-            d: "cantidad =perros.length;",
-            e: "cantidad = perros.length",
-            f: "cantidad=perros.length",
-            g: "cantidad= perros.length",
-            h: "cantidad =perros.length"
-        },
-        solucion: "let cantidad = 10;"
-    },    
-    {
-        nivel: 4, 
-        titulo: 'Nivel 1: Junior Front-End 🤞', 
-        descripcion: 'Invertir cadena', 
-        problema: "let cadena = 'pato donald'; <br>let invertida = <em>undefined</em>;", 
-        planteamiento: 'Invierte los caracteres de la variable cadena, y asigalos a la variable <code>invertida</code>.', 
-        respuesta: {
-            a: "invertida = cadena.split('').reverse().join('');",
-            b: 'invertida = cadena.split("").reverse().join("");',
-            c: "invertida=cadena.split('').reverse().join('');",
-            d: 'invertida=cadena.split("").reverse().join("");',
-            e: "invertida = cadena.split('').reverse().join('')",
-            f: 'invertida = cadena.split("").reverse().join("")',
-            g: "invertida=cadena.split('').reverse().join('')",
-            h: 'invertida=cadena.split("").reverse().join("")'
-        },
-        solucion: "let invertida = 'dlanod otap'"
-    },
-    {
-        nivel: 5, 
-        titulo: 'Nivel 2: Junior Front-End 🔢', 
-        descripcion: 'He recibido ésta colección de datos:', 
-        problema: "let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22]; <br>let ordenar = <em>undefined</em>;", 
-        planteamiento: 'Ordena de forma ascendente éstos datos y asigna el resultado a la variable <code>ordenar</code>.', 
-        respuesta: {
-            a: "ordenar = datos.sort((a, b) => a - b);",
-            b: 'ordenar = datos.sort((a, b) => a-b);',
-            c: "ordenar = datos.sort((a, b)=> a - b);",
-            d: 'ordenar = datos.sort((a, b)=> a-b);',
-            e: "ordenar = datos.sort((a, b)=>a-b);",
-            f: "ordenar = datos.sort((a, b) => a - b)",
-            g: 'ordenar = datos.sort((a, b) => a-b)',
-            h: "ordenar = datos.sort((a, b)=> a - b)",
-            i: 'ordenar = datos.sort((a, b)=> a-b)',
-            j: "ordenar = datos.sort((a, b)=>a-b)"
-        },
-        solucion: "let ordenar = [1, 2, 4, 4, 5, 5, 10, 12, 21, 22, 32, 369, 696, 1000];"
-    },
-    {
-        nivel: 6, 
-        titulo: 'Nivel 3: Junior Front-End 🕵️‍♀️', 
-        descripcion: 'Quiero saber el número total, de todas las "s" que hay en éste trabalenguas:', 
-        problema: "let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto'; <br>let repet = <em>null</em>;", 
-        planteamiento: '¿Cuál es el número de veces que se repite la letra "s" en el trabalenguas?. Asignalo el resultado a la variable <code>repet</code>.', 
-        respuesta: {
-            a: "repet = trabalenguas.match(/s/gi).length;",
-            b: 'repet=trabalenguas.match(/s/gi).length;',
-            c: 'repet= trabalenguas.match(/s/gi).length;',
-            d: 'repet =trabalenguas.match(/s/gi).length;',
-            e: "repet = trabalenguas.match(/s/gi).length",
-            f: 'repet=trabalenguas.match(/s/gi).length',
-            g: 'repet= trabalenguas.match(/s/gi).length',
-            h: 'repet =trabalenguas.match(/s/gi).length'
-        },
-        solucion: "let repet = '11'"
-    },    
-    {
-        nivel: 7, 
-        titulo: 'Nivel 5: Junior Front-End 🧮', 
-        descripcion: '', 
-        problema: "let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.'; <br>let cantidad = <em>null</em>;", 
-        planteamiento: '¿Cuál es la cantidad de números que contiene esta cadena?. Asigna el valor a la variable <code>cantidad</code>.', 
-        respuesta: {
-            a: "cantidad = cadena.match(/[0-9]/g).length;",
-            b: 'cantidad=cadena.match(/[0-9]/g).length;',
-            c: "cantidad =cadena.match(/[0-9]/g).length;",
-            d: 'cantidad= cadena.match(/[0-9]/g).length;',
-            e: "cantidad = cadena.match(/[0-9]/g).length",
-            f: "cantidad=cadena.match(/[0-9]/g).length",
-            g: 'cantidad =cadena.match(/[0-9]/g).length',
-            h: "cantidad= cadena.match(/[0-9]/g).length",
-        },
-        solucion: "let cantidad = 27;"
-    },    
-    {
-        nivel: 8, 
-        titulo: 'Finished!🎉', 
-        descripcion: "Congratulations, you've finished the JS Methods Game.", 
-        problema: "😁let JsMethodsGame = true;😁", 
-        planteamiento: 'See more of me, here: <code><a href="https://github.com/Alvaro624la" target="_blank">https://github.com/Alvaro624la</a></code>', 
-        respuesta: {
-            a: "",
-            b: '',
-            c: "",
-            d: '',
-            e: "",
-            f: "",
-            g: '',
-            h: "",
-            i: '',
-            j: ""
-        }, 
-        solucion: ""
-    },
-    {
-        nivel: 333, 
-        titulo: 'Nivel 4: Junior Front-End #️⃣', 
-        descripcion: 'Teniendo esta frase:', problema: "let frase = ' Bueno,  parece   algo   ,  facil'; <br>let palabras = <em>undefined</em>;", 
-        planteamiento: '¿Cuál es la cantidad de palabras contiene esta frase?. Asigna el valor a la variable <code>palabras</code>.', 
-        respuesta: {
-            a: "",
-            b: '',
-            c: "",
-            d: '',
-            e: "",
-            f: "",
-            g: '',
-            h: "",
-            i: '',
-            j: ""
-        },
-        solucion: ""
-    },    
-    {
-        nivel: 10, 
-        titulo: 'Nivel 7: Junior Front-End', 
-        descripcion: 'Distancia de Hamming', 
-        problema: "", 
-        planteamiento: '', 
-        respuesta: {
-            a: "",
-            b: '',
-            c: "",
-            d: '',
-            e: "",
-            f: "",
-            g: '',
-            h: "",
-            i: '',
-            j: ""
-        },
-        solucion: ""
-    },    
-    {
-        nivel: 666, 
-        titulo: '', 
-        descripcion: 'Hoy tengo comida familiar. Quiero poner el nombre de los invitados en las sillas, pero tengo poco espacio para escribir a mi sobrino', 
-        problema: "let sobrino = 'Alejandro Daniel Ramirez'", 
-        planteamiento: '¿Cuántas palabras/carácteres contiene exactamente el nombre de "Alejandro"? Asigna el valor resultante a la variable "palabras"', 
-        respuesta: {
-            a: "",
-            b: '',
-            c: "",
-            d: '',
-            e: "",
-            f: "",
-            g: '',
-            h: "",
-            i: '',
-            j: ""
-        },
-        solucion: ""
-    }
-];
-
-//COMPROBACIONES (cambiar de documento al terminar comprobaciones (visible para el cliente))
-//NIVEL 1
-// var mascotas = ['perro']; 
-// mascotas.unshift('gato');
-// console.log(mascotas);
-// //comprobar
-// console.log(mascotas[0].includes('gato'));
-
-//NIVEL 2
-// var mascotas = ['gato', 'raton', 'perro'];
-// mascotas.splice(1, 1);
-// console.log(mascotas);
-// let car;
-// console.log(car);
-
-//NIVEL 3
-// let perros = ['Luby', 'Luna', 'Toby', 'Leo', 'Gin', 'Coco', 'Harry', 'Nelson', 'July', 'Gabe', 'Darleen'];
-// let cantidad = null;
-// cantidad = perros.length;
-// console.log(cantidad);
-
-//NIVEL 4
-// let cadena = 'pato donald';
-// let invertida = undefined;
-// invertida = cadena.split('').reverse().join('');
-// console.log(invertida);
-
-//NIVEL 5
-// let datos = [4, 10, 5, 696, 32, 369, 1000, 12, 5, 1, 2, 4, 21, 22];
-// let ordenar = undefined;
-// ordenar = datos.sort((a, b)=> a - b);
-// console.log(ordenar);
-
-//NIVEL 6
-// let trabalenguas = 'Si tu gusto gustara del gusto que gusta mi gusto, mi gusto gustaría del gusto que gusta tu gusto';
-// let repet = null;
-// repet = trabalenguas.match(/s/gi).length;
-// console.log(repet);
-
-//NIVEL 7
-// let cadena = 'El número pi 3,14 es muy largo. 3,141592653589793 y más. En binario es 11,001001 y más.';
-// let cantidad;
-// cantidad = cadena.match(/[0-9]/g).length;
-// console.log(cantidad);
-
-//NIVEL 8
-
-
-
-
-
-
-
-
-
-
-
-//NIVEL x
-// let sobrino = 'Alejandro Daniel Ramirez';
-// let palabras = null;
-
-// //contar palabras caracteres string javascript:
-// // Quitar los espacios en blanco y pasar el string a minúsculas(si es necesario)
-// // Recorrer la cadena de texto en vez de pasarlo a un array.
-// // Finalmente guardar el resultado en un object, donde la letra es la key y su total.
-
-// console.log(palabras);
-
+import { coleccionNiveles } from "./modulos/coleccionNiveles";
 
 // JUEGO
 
 // VARIABLES (global)
+let randomMode = 'off';
+
 const main = document.getElementById('main');
-let acc = 1;
+let nivelNum = 1;
+let aciertosAcc = 0;
 let nivelProblema = "";
 let nivelRespuesta;
 let nivelSolucion = "";
 //MODAL
 const body = document.getElementById('body');
+let focusHere;
+// let bgModalBehind;
 let modal;
+let anchorFocus = document.getElementById('anchorFocus');; // <a> para focus
 let content;
 let modalBtn;
-
 
 //CREACIÓN NODOS
 //NIVELES
 let nuevoNivel = () => {
     main.innerHTML = "";
     coleccionNiveles.forEach((nivel)=>{
-        if(nivel.nivel === acc){
+        //mostrar nivel final
+        if(aciertosAcc === coleccionNiveles.length - 1){
+            nivelNum = 'Final';
+        };
+        //mostrar niveles - funcionamiento
+        if(nivel.nivel === nivelNum){
             nivelProblema = nivel.problema;
             nivelRespuesta = nivel.respuesta;
             nivelSolucion = nivel.solucion;
@@ -347,6 +81,16 @@ let nuevoNivel = () => {
             solucionContenido1.innerHTML = `<textarea id="solText" class="main__container__solucion-flex__contenido__textarea" type="text" spellcheck="false" autocomplete="off" placeholder="Introduce tu respuesta"></textarea>`;
             solucionContenido2.innerHTML = `<button id="solBtn" class="main__container__solucion-flex__contenido__btn">Comprobar</button>`;
 
+            //Focus (inhabilitar textarea)
+            focusHere = document.createElement('button');
+            body.appendChild(focusHere);
+            focusHere.classList.add('focus-here');
+            focusHere.id = 'focusHere';
+
+            //BG-MODAL
+            // bgModalBehind = document.createElement('div');
+            // body.appendChild(bgModalBehind);
+            
             //MODAL
             modal = document.createElement('div');
             body.appendChild(modal);
@@ -361,91 +105,143 @@ let nuevoNivel = () => {
                 modalBtn.classList.add('body__modal__close-btn');
 
             //GAME FINISHED/PASSED
-            if(acc === 8){
+            if(nivelNum === 'Final'){
                 solucionContenido1.innerHTML = ``;
                 solucionContenido2.innerHTML = ``;
                 //clear local storage btn
                 let clearBtn = document.getElementById('clearLocalStorageBtn');
                 clearBtn.addEventListener('click', ()=>{
-                    localStorage.removeItem('contador');
-                    acc = 1;
+                    localStorage.removeItem('Nivel');
+                    localStorage.removeItem('Aciertos');
+                    nivelNum = 1;
+                    aciertosAcc = 0;
                     nuevoNivel();
                 });
             };
         };
     });
 
-
     //COMPROBACIÓN RESULTADO
     //VARIABLES (global)
     try{
         let respuesta = document.getElementById('solText');
-        let comprobarBtn = document.getElementById('solBtn'); 
-   
+        let comprobarBtn = document.getElementById('solBtn');
+
     //FUNCIONES
-    comprobarBtn.addEventListener('click', ()=>{
-            if(
-                respuesta.value === nivelRespuesta.a || 
-                respuesta.value === nivelRespuesta.b || 
-                respuesta.value === nivelRespuesta.c || 
-                respuesta.value === nivelRespuesta.d || 
-                respuesta.value === nivelRespuesta.e || 
-                respuesta.value === nivelRespuesta.f || 
-                respuesta.value === nivelRespuesta.g || 
-                respuesta.value === nivelRespuesta.h || 
-                respuesta.value === nivelRespuesta.i || 
-                respuesta.value === nivelRespuesta.j
-                ){
-                //MODAL and NEXT LEVEL
-                modal.classList.add('body__modal--active');
-                content.innerHTML = `¡Correcto! El resultado es ➔ ${nivelSolucion}`;
-                modalBtn.classList.add('body__modal__close-btn--active');
-                main.style.filter = 'blur(2px)';
-                modalBtn.addEventListener('click', ()=>{
-                    modal.classList.remove('body__modal--active');
-                    modalBtn.classList.remove('body__modal__close-btn--active');
-                    main.style.filter = '';
-                    //NUEVO NIVEL
-                    nuevoNivel();
-                });
-                //TEXTAREA
-                respuesta.style.backgroundColor = 'rgba(0, 255, 0, .6)';
-                setTimeout(returnColor, 800);
-                function returnColor(){
-                    respuesta.style.backgroundColor = '#fff';
+    //Comprobar:
+    let check = ()=>{
+        if(
+            respuesta.value === nivelRespuesta.a || 
+            respuesta.value === nivelRespuesta.b || 
+            respuesta.value === nivelRespuesta.c || 
+            respuesta.value === nivelRespuesta.d || 
+            respuesta.value === nivelRespuesta.e || 
+            respuesta.value === nivelRespuesta.f || 
+            respuesta.value === nivelRespuesta.g || 
+            respuesta.value === nivelRespuesta.h || 
+            respuesta.value === nivelRespuesta.i || 
+            respuesta.value === nivelRespuesta.j
+            ){
+            //MODAL and NEXT LEVEL
+            modal.classList.add('body__modal--active');
+            content.innerHTML = `¡Correcto! El resultado es ➔ ${nivelSolucion}`;
+            modalBtn.classList.add('body__modal__close-btn--active');
+            main.style.filter = 'blur(2px)';
+            // bgModalBehind.classList.add('bg-main-modal-behind');
+            focusHere.focus();
+            //cerrar el modal
+            let closeModalBien = ()=>{
+                modal.classList.remove('body__modal--active');
+                modalBtn.classList.remove('body__modal__close-btn--active');
+                main.style.filter = '';
+                // bgModalBehind.classList.remove('bg-main-modal-behind');
+                //NUEVO NIVEL
+                nuevoNivel();
+            };
+            //cerrar modal con CLICK
+            modalBtn.addEventListener('click', ()=>{
+                closeModalBien();
+                respuesta.focus();
+            });
+            //cerrar modal con ESC key
+            document.addEventListener('keyup', (e)=>{
+                if(e.code == 'Escape'){
+                    e.preventDefault();
+                    closeModalBien();
+                    respuesta.focus();
                 };
-                //CONTADOR
-                acc++;
-                //local storage CONTADOR
-                localStorage.setItem('contador', JSON.stringify(acc));
-            } else {
-                //MODAL AND NO PASS LEVEL
-                modal.classList.add('body__modal--active');
-                modal.style.boxShadow = 'rgba(255, 0, 0, 0.3) 0px 0px 0px 4px';
-                content.innerHTML = `Incorrecto (recuerda utilizar ES6 y/o escribir limpio y legible con espacios correspondientes)`;
-                modalBtn.classList.add('body__modal__close-btn--active');
-                main.style.filter = 'blur(2px)';
-                modalBtn.addEventListener('click', ()=>{
-                    modal.classList.remove('body__modal--active');
-                    modal.style.boxShadow = 'rgba(3, 52, 214, 0.3) 0px 0px 0px 4px';
-                    modalBtn.classList.remove('body__modal__close-btn--active');
-                    main.style.filter = '';
-                });
-                //TEXTAREA
-                respuesta.style.backgroundColor = 'rgba(255, 0, 0, .6)';
-                setTimeout(returnColor, 800);
-                function returnColor(){
-                    respuesta.style.backgroundColor = '#fff';
+            });
+            //TEXTAREA
+            respuesta.style.backgroundColor = 'rgba(0, 255, 0, .6)';
+            setTimeout(returnColor, 800);
+            function returnColor(){
+                respuesta.style.backgroundColor = '#fff';
+            };
+            //CONTADOR
+            nivelNum++;
+            aciertosAcc++;
+            //local storage CONTADOR
+            localStorage.setItem('Nivel', JSON.stringify(nivelNum));
+            localStorage.setItem('Aciertos', JSON.stringify(aciertosAcc));
+        } else {
+            //MODAL AND NO PASS LEVEL
+            modal.classList.add('body__modal--active');
+            modal.style.boxShadow = 'rgba(255, 0, 0, 0.3) 0px 0px 0px 4px';
+            content.innerHTML = `Incorrecto (recuerda utilizar ES6 y/o escribir limpio y legible con espacios correspondientes)`;
+            modalBtn.classList.add('body__modal__close-btn--active');
+            main.style.filter = 'blur(2px)';
+            // bgModalBehind.classList.add('bg-main-modal-behind');
+            focusHere.focus();
+            
+            //cerrar el modal
+            let closeModalMal = ()=>{
+                modal.classList.remove('body__modal--active');
+                modal.style.boxShadow = 'rgba(3, 52, 214, 0.3) 0px 0px 0px 4px';
+                modalBtn.classList.remove('body__modal__close-btn--active');
+                main.style.filter = '';
+                // bgModalBehind.classList.remove('bg-main-modal-behind');
+            };
+            //cerrar modal con CLICK
+            modalBtn.addEventListener('click', ()=>{
+                closeModalMal();
+                respuesta.focus();
+            });
+            //cerrar modal con ESC key
+            document.addEventListener('keyup', (e)=>{
+                if(e.code == 'Escape'){
+                    e.preventDefault();
+                    closeModalMal();
+                    respuesta.focus();
                 };
-            }
-        // }
+            });
+            //TEXTAREA
+            respuesta.style.backgroundColor = 'rgba(255, 0, 0, .6)';
+            setTimeout(returnColor, 800);
+            function returnColor(){
+                respuesta.style.backgroundColor = '#fff';
+            };
+        }
+    };
+    //Comprobar al presionar y soltar tecla ENTER
+    respuesta.addEventListener('keypress', (e)=>{
+        if (e.code == 'Enter' && modal.classList != 'body__modal body__modal--active') {
+        e.preventDefault();
+        check();
+        };
     });
+    //Comprobar con click en btn "comprobar"
+    comprobarBtn.addEventListener('click', ()=>{
+        check();
+    });
+
     //clear local storage
     let clearBtn = document.getElementById('clearLocalStorageBtn');
 
     clearBtn.addEventListener('click', ()=>{
-        localStorage.removeItem('contador');
-        acc = 1;
+        localStorage.removeItem('Nivel');
+        localStorage.removeItem('Aciertos');
+        nivelNum = 1;
+        aciertosAcc = 0;
         nuevoNivel();
     });
 }catch(error){
@@ -457,8 +253,31 @@ nuevoNivel();
 
 //local storage
 window.onload = ()=>{
-    if(localStorage.getItem('contador')){
-        acc = JSON.parse(localStorage.getItem('contador'));
+    if(localStorage.getItem('Nivel')){
+        nivelNum = JSON.parse(localStorage.getItem('Nivel'));
+        aciertosAcc = JSON.parse(localStorage.getItem('Aciertos'));
         nuevoNivel();
     };
 };
+
+//FALTA:
+//Opcion de mostrar niveles en orden aleatorio
+    //Números aleatorios entre coleccionNiveles.length
+    /*
+    
+
+    //RANDOM MODE
+
+        randomMode = 'on';
+        console.log(nivel.nivel);        
+
+        if(randomMode === 'on'){
+            let numeros = nivel.nivel;
+            numeros.sort(()=>{return Math.random() - 0.5});
+            console.log(numeros);
+        };
+
+
+    */
+//Guardar en BBDD la cantidad de usuarios entrados en la pag.
+//Guardar en BBDD la cantidad/% de errores y aciertos, y en qué niveles.
