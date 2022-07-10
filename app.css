@@ -122,17 +122,18 @@
   bottom: 100%;
   right: 20px;
   border: 0 solid transparent;
+  z-index: 999;
 }
 .main__container__start-over-btn::after {
   content: "Start Over";
   color: white;
 }
 .main__container__start-over-btn:hover {
-  background-color: rgba(211, 34, 34, 0.692);
+  background-color: rgba(211, 34, 34, 0.7);
   cursor: pointer;
 }
 .main__container__start-over-btn:active {
-  background-color: rgba(255, 0, 0, 0.692);
+  background-color: rgba(255, 0, 0, 0.8);
 }
 .main__container__titulo {
   background-color: rgba(128, 128, 128, 0.9);
