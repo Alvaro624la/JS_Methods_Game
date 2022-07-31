@@ -247,6 +247,7 @@ let nuevoNivel = () => {
 }catch(error){
     //aprovecho el error de no detectar las variables let respuesta y let comprobarBtn para dar un mensaje y eliminar el error con catch.
     console.log('You passed the game!');
+    // console.warn(error);
 }
 };
 nuevoNivel();
