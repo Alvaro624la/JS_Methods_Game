@@ -93,6 +93,7 @@ export const coleccionNiveles = [
         solucion: "productos = ['patatas buenas', 'huevos', 'aceite'];"
     },
     {
+        //duda/problema: no entender bien el enunciado ni el uso de solo 1 parametro para el método slice
         nivel: 6, 
         titulo: 'Nivel 3: Básico 🍅🧀',
         descripcion: 'Voy a acompañar la tortilla con macarrones. En el armario tengo tres ingredientes, pero solo quiero tomate y queso.', 
@@ -266,27 +267,27 @@ export const coleccionNiveles = [
         },
         solucion: "let cantidad = 27;"
     }
-    // ,
-    // {
-    //     nivel: 'Final', 
-    //     titulo: 'Finished!🎉', 
-    //     descripcion: "Congratulations, you've finished the JS Methods Game.", 
-    //     problema: "😁let JsMethodsGame = true;😁", 
-    //     planteamiento: 'See more of me, here: <code><a href="https://github.com/Alvaro624la" target="_blank">https://github.com/Alvaro624la</a></code>', 
-    //     respuesta: {
-    //         a: "",
-    //         b: '',
-    //         c: "",
-    //         d: '',
-    //         e: "",
-    //         f: "",
-    //         g: '',
-    //         h: "",
-    //         i: '',
-    //         j: ""
-    //     }, 
-    //     solucion: ""
-    // }
+    ,
+    {
+        nivel: 'Final', 
+        titulo: 'Finished!🎉', 
+        descripcion: "Congratulations, you've finished the JS Methods Game.", 
+        problema: "😁let JsMethodsGame = true;😁", 
+        planteamiento: 'See more of me, here: <code><a href="https://github.com/Alvaro624la" target="_blank">https://github.com/Alvaro624la</a></code>', 
+        respuesta: {
+            a: "",
+            b: '',
+            c: "",
+            d: '',
+            e: "",
+            f: "",
+            g: '',
+            h: "",
+            i: '',
+            j: ""
+        }, 
+        solucion: ""
+    }
 ];
 
 //IDEAS NUEVOS NIVELES
