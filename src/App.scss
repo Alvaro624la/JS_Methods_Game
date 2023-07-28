@@ -3,76 +3,75 @@
     margin: 0;
     box-sizing: border-box;
 }
-.body{
-    font-family: 'Montserrat', sans-serif, Helvetica, Arial;
+body{
+    font-family: 'Montserrat', sans-serif, Helvetica, Arial;        
+}
+.modal{
+    display: none;
+    // opacity: 0;
+    transition: opacity .5s;
+    background-image: url('./src/img/7.jpg');
+    background-size: cover;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    box-shadow: rgba(3, 52, 214, 0.3) 0px 0px 0px 4px;
+    max-width: 25em;
+    max-height: 48em;
+    z-index: 2;
+    
+    &--active{
+        display: block;
+        // opacity: 1;
+        // transition: opacity .5s;
+    }
 
-        &__modal{
-            display: none;
-            // opacity: 0;
-            transition: opacity .5s;
-            background-image: url('./src/7.jpg');
-            background-size: cover;
-            width: auto;
-            height: auto;
+    &__content{
+        padding: 20px;
+        line-height: 1.6em;
+        width: auto;
+        height: auto;
+        font-size: 1.1em;
+        // overflow: scroll;
+    }
+
+    &__close-btn{
+        display: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid red;
+        font-size: 2em;
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        transition: .2s;
+        z-index: 2;
+
+        &:hover{
+            background-color: rgba(207, 29, 29, 0.6);
+            transition: .2s;
+            cursor: pointer;
+        }
+        &:active{
+            background-color: rgba(207, 29, 29, 0.9);
+        }
+        &::after{
+            content: '❌';
+            font-size: .7em;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            border-radius: 1em;
-            box-shadow: rgba(3, 52, 214, 0.3) 0px 0px 0px 4px;
-            max-width: 25em;
-            max-height: 48em;
-            z-index: 2;
-            
-            &--active{
-                display: block;
-                // opacity: 1;
-                // transition: opacity .5s;
-            }
-
-            &__content{
-                padding: 20px;
-                line-height: 1.6em;
-                width: auto;
-                height: auto;
-                font-size: 1.1em;
-                // overflow: scroll;
-            }
-
-            &__close-btn{
-                display: none;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                border: 3px solid red;
-                font-size: 2em;
-                position: absolute;
-                top: -60px;
-                right: -60px;
-                transition: .2s;
-                z-index: 2;
-    
-                &:hover{
-                    background-color: rgba(207, 29, 29, 0.6);
-                    transition: .2s;
-                    cursor: pointer;
-                }
-                &:active{
-                    background-color: rgba(207, 29, 29, 0.9);
-                }
-                &::after{
-                    content: '❌';
-                    font-size: .7em;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-                &--active{
-                    display: block;
-                }                
-            }
         }
+        &--active{
+            display: block;
+        }                
+    }
 }
 //bg para inactividad funcionalidades main cuando modal
 .bg-main-modal-behind{
@@ -98,7 +97,7 @@
 }
 
 .main{
-    background: url('./src/main-background.jpg');
+    background: url('./src/img/main-background.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -156,7 +155,7 @@
             left: 25px;
         }
         &__problema-cont{
-            background-image: url('./src/7.jpg');
+            background-image: url('./src/img/7.jpg');
             background-size: cover;
             box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
             border-radius: 20px 20px 0 0;
