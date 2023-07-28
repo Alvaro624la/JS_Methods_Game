@@ -10,7 +10,6 @@ body{
     display: none;
     // opacity: 0;
     transition: opacity .5s;
-    background-image: url('./src/img/7.jpg');
     background-size: cover;
     width: auto;
     height: auto;
@@ -97,7 +96,6 @@ body{
 }
 
 .main{
-    background: url('./src/img/main-background.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -155,7 +153,6 @@ body{
             left: 25px;
         }
         &__problema-cont{
-            background-image: url('./src/img/7.jpg');
             background-size: cover;
             box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
             border-radius: 20px 20px 0 0;

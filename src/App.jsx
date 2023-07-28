@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { coleccionNiveles } from "./modulos/coleccionNiveles";
+import imgFondo1 from './img/main-background.jpg';
+import imgFondo2 from './img/7.jpg';
 
 function App() {
 
@@ -202,12 +204,12 @@ function App() {
 
   return (
     <>
-    <main ref={main} className="main">
+    <main ref={main} className="main" style={{backgroundImage: `url(${imgFondo1})`}}>
       {/* PANTALLA NORMAL */}
       <section className="main__container">
         <button className="main__container__start-over-btn" onClick={startOver}></button>
         <article className="main__container__titulo">{nivelTitulo}</article>
-        <article className="main__container__problema-cont">
+        <article className="main__container__problema-cont" style={{backgroundImage: `url(${imgFondo2})`}}>
           <div className="main__container__problema-cont__contenido">
             <span className="main__container__problema-cont__contenido__span1" ref={span1}></span>
             <span className="main__container__problema-cont__contenido__span2" ref={span2}></span>
@@ -233,7 +235,7 @@ function App() {
     {/* Focus (inhabilitar textarea) */}
     <button ref={focusHere} className='focus-here'></button>
     {/* MODAL */}
-    <div ref={modal} className='modal'>
+    <div ref={modal} className='modal' style={{backgroundImage: `url(${imgFondo2})`}}>
       <p ref={content} className='modal__content'></p>
       <div ref={modalBtn} className='modal__close-btn' onClick={funcionesComunesModalCerrar}></div>
     </div>
