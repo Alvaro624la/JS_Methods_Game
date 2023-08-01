@@ -202,10 +202,6 @@ export const coleccionNiveles = [
             "ingredientes.slice( 1 )",
             "ingredientes.slice(1 ) ",
             "ingredientes.slice( 1 ) ",
-            " ingredientes.slice(1)",
-            " ingredientes.slice( 1)",
-            " ingredientes.slice(1) ",
-            " ingredientes.slice( 1) ",
 
             "ingredientes.slice(1);",
             "ingredientes.slice( 1);",
@@ -213,10 +209,6 @@ export const coleccionNiveles = [
             "ingredientes.slice( 1 );",
             "ingredientes.slice(1 ); ",
             "ingredientes.slice( 1 ); ",
-            " ingredientes.slice(1);",
-            " ingredientes.slice( 1);",
-            " ingredientes.slice(1); ",
-            " ingredientes.slice( 1); ",
 
             "ingredientes.slice(1) ;",
             "ingredientes.slice( 1) ;",
@@ -224,10 +216,6 @@ export const coleccionNiveles = [
             "ingredientes.slice( 1 ) ;",
             "ingredientes.slice(1 ) ; ",
             "ingredientes.slice( 1 ) ; ",
-            " ingredientes.slice(1) ;",
-            " ingredientes.slice( 1) ;",
-            " ingredientes.slice(1) ; ",
-            " ingredientes.slice( 1) ; "
         ],
         solucion: "ingredientes = ['tomate', 'queso'];"
     },

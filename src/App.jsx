@@ -119,9 +119,8 @@ function App() {
   let check = ()=>{
     // Variable para obtener la respuesta del usuario cuando coincida con la primera respuesta correcta del objeto coleccionNiveles
     let respuestaCoincidente = '';
-    // Obtener la respuesta del usuario en una variable donde eliminamos los posibles espacios que haya al principio de la palabra
-    let respuestaUsuarioLimpia = respuesta.current.value.match(/[^\s]/gi).join('');
-    console.log(respuestaUsuarioLimpia);
+    // Obtener la respuesta del usuario en una variable donde eliminamos los posibles espacios que tenga al principio y al final
+    let respuestaUsuarioLimpia = respuesta.current.value.match(/[^\s*]\w.*[^\s*]/gi).join();
     // Recorrer el arr con las respuestas del objeto coleccionNiveles y cambiar el valor de la respuestaCoincidente
     nivelRespuesta.map(sol => respuestaUsuarioLimpia === sol ? respuestaCoincidente = sol : false)
     // Condición para cuando la variable respuestaCoincidente tenga un valor distinto a '', será que hemos obtenido una respuesta correcta y procederemos al siguiente nivel con todos los procesos que ésto implica
