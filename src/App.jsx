@@ -4,7 +4,6 @@ import imgFondo1 from './img/main-background.jpg';
 import imgFondo2 from './img/7.jpg';
 
 function App() {
-
   // JUEGO
 
   // VARIABLES (global)
@@ -20,7 +19,6 @@ function App() {
   const [ nivelTitulo, setNivelTitulo ] = useState();
 
   const respuesta = useRef();
-
   // Variables para incluir strings con etiquetas html y que se muestren correctamente dentro del DOM y no literalmente los <code>... etc. Via innerHTML.
   const span1 = useRef();
   const span2 = useRef();
@@ -121,8 +119,11 @@ function App() {
   let check = ()=>{
     // Variable para obtener la respuesta del usuario cuando coincida con la primera respuesta correcta del objeto coleccionNiveles
     let respuestaCoincidente = '';
+    // Obtener la respuesta del usuario en una variable donde eliminamos los posibles espacios que haya al principio de la palabra
+    let respuestaUsuarioLimpia = respuesta.current.value.match(/[^\s]/gi).join('');
+    console.log(respuestaUsuarioLimpia);
     // Recorrer el arr con las respuestas del objeto coleccionNiveles y cambiar el valor de la respuestaCoincidente
-    nivelRespuesta.map(sol => respuesta.current.value === sol ? respuestaCoincidente = sol : false)
+    nivelRespuesta.map(sol => respuestaUsuarioLimpia === sol ? respuestaCoincidente = sol : false)
     // Condición para cuando la variable respuestaCoincidente tenga un valor distinto a '', será que hemos obtenido una respuesta correcta y procederemos al siguiente nivel con todos los procesos que ésto implica
     if(respuestaCoincidente !== ''){
       funcionesComunesModalAbrir();
