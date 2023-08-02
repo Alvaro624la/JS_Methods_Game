@@ -34,6 +34,11 @@ function App() {
   const solucionContenido1 = useRef();
   const solucionContenido2 = useRef();
 
+  //Hint / Boton de ayuda
+  const hintBtn = useRef();
+  const hintModal = useRef();
+  //Variable para saber cuando el usuario falle 2 veces
+  let intentos = 0;
 
   // FUNCIONES
   // Mostrar contenido de nivel actual
@@ -51,11 +56,9 @@ function App() {
           setNivelRespuesta(nivel.respuesta);
           setNivelSolucion(nivel.solucion);
 
-          // setNivelNum(nivel.nivel);
           setNivelTitulo(nivel.titulo);
           span1.current.innerHTML = nivel.descripcion;
           span3.current.innerHTML = nivel.planteamiento;
-          // setNivelComprobacion(nivel.comprobacion);
         };
     });
   };
@@ -77,9 +80,7 @@ function App() {
 
   // Boton de reinicio del juego
   const startOver = () => {
-    // sobreescribir local storage mejor que eliminarlo
-    // localStorage.removeItem('Nivel');
-    // localStorage.removeItem('Aciertos');
+    // sobreescribir local storage (mejor que eliminarlo)
     localStorage.setItem('Nivel', JSON.stringify(1));
     localStorage.setItem('Aciertos', JSON.stringify(0));
     setGameNivelNum(1);
@@ -92,6 +93,8 @@ function App() {
       solucionContenido1.current.style.display = 'block';
       solucionContenido2.current.style.display = 'block';
     };
+    // Esconder boton de pista
+    hintBtn.current.style.display = 'none';
   };
 
   const funcionesComunesModalAbrir = () => {
@@ -113,6 +116,23 @@ function App() {
     main.current.style.filter = '';
     // Siguiente nivel (siempre que hayamos aumentado el valor de gameNivelNum)
     respuesta.current.focus();
+  };
+  
+  const openHint = () => {
+    hintModal.current.innerHTML = `Pista 🔎: ${nivelSolucion}`;
+
+    hintModal.current.className.includes('opened-hint-modal')
+    ? hintModal.current.classList.remove('main__container__solucion-flex__contenido__opened-hint-modal')
+    : hintModal.current.classList.add('main__container__solucion-flex__contenido__opened-hint-modal');
+
+    hintBtn.current.innerHTML !== 'X' 
+      ? (
+        hintBtn.current.innerHTML = 'X',
+        hintBtn.current.style.backgroundColor = '#f00'
+      ) : (
+        hintBtn.current.innerHTML = '?',
+        hintBtn.current.style.backgroundColor = '#ffff44'
+      );
   };
 
   //COMPROBACIÓN RESULTADO
@@ -153,6 +173,8 @@ function App() {
       localStorage.setItem('Aciertos', JSON.stringify(aciertosAcc + 1));
       // Dadas todas las operaciones para subir de nivel, procedemos a mostrar los datos del siguiente nivel
       nuevoNivel();
+      // Esconder boton de pista (aplico la condición por si sale el error: Uncaught TypeError: Cannot read properties of undefined (reading 'style'))
+      hintBtn.current.style.display !== 'none' ? hintBtn.current.style.display = 'none' : false;
     } else {
       funcionesComunesModalAbrir();
       // Cambiar color del textarea temporalmente indicando al usuario si la respuesta ha sido correcta o errónea, por 800ms
@@ -171,6 +193,9 @@ function App() {
               e.preventDefault();
         }
       });
+      // Mostrar botón de pista cuando el usuario falle 2 veces
+      intentos++;
+      intentos >= 2 ? hintBtn.current.style.display = 'block' : false;
     }
   };
   // catch(error){
@@ -225,6 +250,8 @@ function App() {
                 check();
                 };
             }} type="text" spellCheck="false" autoComplete="off" placeholder="Introduce tu respuesta"></textarea>
+            <button ref={hintBtn} className='main__container__solucion-flex__contenido__hint-btn' onClick={openHint}>?</button>
+            <span ref={hintModal} className='main__container__solucion-flex__contenido__closed-hint-modal'></span>
           </div>
           <div ref={solucionContenido2} className="main__container__solucion-flex__contenido">
             <button className="main__container__solucion-flex__contenido__btn" onClick={check}>Comprobar</button>
